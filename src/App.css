@@ -51,7 +51,6 @@ h4 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
-  margin-bottom: 0.25rem;
 }
 
 h1 {
@@ -97,6 +96,7 @@ h4 {
   align-items: center;
   width: 360px;
   height: 80px;
+  margin-bottom: 0.75rem;
 }
 
 .income {
@@ -115,4 +115,27 @@ h4 {
 
 .expense-color-h3 {
   color: var(--clr-expense);
+}
+
+.transaction-list {
+  width: 360px;
+  height: 300px;
+  background-color: var(--clr-tile);
+  position: relative;
+}
+
+.transaction-list h4 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.transaction-list ul li {
+  position: absolute;
+  width: 340px;
+  top: 40px;
+  left: 10px;
+  height: 50px;
+  font-size: 25px;
 }
