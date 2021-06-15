@@ -1,9 +1,16 @@
+import React from 'react';
+import { Header } from './components/Header';
+import { Balance } from './components/Balance';
+import { IncomeExpense } from './components/IncomeExpense';
+
 import './App.css';
 
 function App() {
   return (
     <div className='container'>
-      <h1>hello world</h1>
+      <Header />
+      <Balance />
+      <IncomeExpense />
     </div>
   );
 }

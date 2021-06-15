@@ -28,6 +28,12 @@ body {
   color: var(--clr-text);
   line-height: 1.5;
   font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 ul {
@@ -45,6 +51,7 @@ h4 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
+  margin-bottom: 0.25rem;
 }
 
 h1 {
@@ -65,10 +72,47 @@ h4 {
 
 /* Global Classes */
 .container {
+  margin: 30px auto;
+  width: 380px;
+  max-width: 380px;
+  padding: 10px;
+  background-color: var(--clr-background);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.balance {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.income-expense {
+  background-color: var(--clr-tile);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  min-height: 100vh;
-  margin: 0;
+  align-items: center;
+  width: 360px;
+  height: 80px;
+}
+
+.income {
+  width: 180px;
+  text-align: center;
+}
+
+.income-color-h3 {
+  color: var(--clr-income);
+}
+
+.expense {
+  width: 180px;
+  text-align: center;
+}
+
+.expense-color-h3 {
+  color: var(--clr-expense);
 }
