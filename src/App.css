@@ -131,11 +131,30 @@ h4 {
   font-size: 20px;
 }
 
-.transaction-list ul li {
-  position: absolute;
+.displayed-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   width: 340px;
   top: 40px;
   left: 10px;
-  height: 50px;
-  font-size: 25px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.displayed-list .bill {
+  position: absolute;
+  left: 10px;
+}
+
+.displayed-list .title {
+  position: absolute;
+  left: 50px;
+}
+
+.displayed-list .delete-btn {
+  position: absolute;
+  right: 10px;
 }
