@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaMoneyBill } from 'react-icons/fa';
-import { FiDelete } from 'react-icons/fi';
 import { RiDeleteBack2Fill } from 'react-icons/ri';
 
 export const Transaction = () => {
