@@ -2,15 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
 /* Variable */
 :root {
-  --clr-text: #000;
+  --clr-text: #1d528e;
   --clr-icons: #3d3d4b;
-  --clr-background: #d6ecfe;
+  --clr-background: #e5f6fe;
   --clr-input-background: #f5f8fe;
+  --clr-container-background: none;
   --clr-tile: #fefefe;
   --clr-income: #6dd383;
   --clr-expense: #faa78f;
   --clr-delete-icon: #f5435b;
-  --clr-add: #70bdfd;
+  --clr-add: #1752a3;
   --spacing: 0.1rem;
 }
 
@@ -76,17 +77,26 @@ h4 {
   width: 380px;
   max-width: 380px;
   padding: 10px;
-  background-color: var(--clr-background);
+  background-color: var(--clr-container-background);
+  border-radius: 10px;
+}
+
+.container > div {
+  border-radius: 10px;
 }
 
 .header {
   text-align: center;
+  color: var(--clr-text);
+  box-shadow: none;
   margin-bottom: 0.75rem;
 }
 
 .balance {
+  background-color: var(--clr-tile);
   text-align: center;
   margin-bottom: 0.75rem;
+  padding: 10px;
 }
 
 .income-expense {
@@ -148,6 +158,7 @@ h4 {
 .displayed-list .bill {
   position: absolute;
   left: 10px;
+  color: var(--clr-income);
 }
 
 .displayed-list .title {
@@ -158,11 +169,12 @@ h4 {
 .displayed-list .delete-btn {
   position: absolute;
   right: 10px;
+  color: var(--clr-delete-icon);
 }
 
 .add-transaction {
   width: 360px;
-  height: 300px;
+  height: auto;
   background-color: var(--clr-tile);
 }
 
@@ -208,6 +220,7 @@ h4 {
   cursor: pointer;
   transition: 800ms ease all;
   outline: none;
+  border-radius: 10px;
 }
 
 .form-control button:hover {
