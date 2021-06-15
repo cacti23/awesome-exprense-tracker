@@ -1,6 +1,18 @@
 /* import font */
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
+/* Variable */
+:root {
+  --clr-text: #000;
+  --clr-icons: #3d3d4b;
+  --clr-background: #f5f8fe;
+  --clr-tile: #fefefe;
+  --clr-income: #6dd383;
+  --clr-expense: #faa78f;
+  --clr-delete-icon: #f5435b;
+  --spacing: 0.1rem;
+}
+
 /* Global Styles */
 *,
 ::after,
@@ -12,4 +24,51 @@
 
 body {
   font-family: 'Titillium Web', sans-serif;
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+/* Global Classes */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
