@@ -1,9 +1,11 @@
-### `npm start`
+### Expense Tracker App 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### [Live Site](https://objective-minsky-7d1cd6.netlify.app/)
 
-### `npm run build`
+![Expense Tracker Image](https://user-images.githubusercontent.com/76640086/122237902-4f644e00-cedd-11eb-90c2-7b385d61be72.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+
+## Introduction
+This is a code repository for the **Expense Tracker App**. 
+
+Expense tracker is a app track your financial activity efficiently. Its simple design makes it lightweight, straightforward and very easy to use.
