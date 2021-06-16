@@ -135,7 +135,8 @@ h4 {
 
 .transaction-list {
   width: 360px;
-  height: 300px;
+  min-height: 300px;
+  overflow: auto;
   background-color: var(--clr-tile);
   position: relative;
   margin-bottom: 0.75rem;

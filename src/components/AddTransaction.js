@@ -12,6 +12,7 @@ export const AddTransaction = () => {
   const onSubmit = e => {
     e.preventDefault();
     let newTransaction;
+    console.log(title + ' ' + isExpense + ' ' + amount);
     if (title && amount) {
       newTransaction = {
         id: uuid(),
@@ -46,7 +47,7 @@ export const AddTransaction = () => {
                 id='income'
                 name='radio-input'
                 checked={isExpense}
-                onChange={() => setIsExpense(true)}
+                onChange={e => setIsExpense(false)}
               />
               <span>Income</span>
             </label>
@@ -56,7 +57,7 @@ export const AddTransaction = () => {
                 id='expense'
                 name='radio-input'
                 checked={isExpense}
-                onChange={() => setIsExpense(true)}
+                onChange={e => setIsExpense(true)}
               />
               <span>Expense</span>
             </label>
