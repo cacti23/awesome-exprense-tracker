@@ -15,6 +15,19 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
+  function calculateTotalIncome() {
+    return state.transactions
+      .filter(transaction => !transaction.isExpense)
+      .reduce((acc, transaction) => (acc += transaction.amount), 0)
+      .toFixed(2);
+  }
+  function calculateTotalExpense() {
+    return state.transactions
+      .filter(transaction => transaction.isExpense)
+      .reduce((acc, transaction) => (acc += transaction.amount), 0)
+      .toFixed(2);
+  }
+
   function deleteTransaction(id) {
     dispatch({
       type: 'DELETE_TRANSACTION',
@@ -24,7 +37,12 @@ export const GlobalProvider = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ transactions: state.transactions, deleteTransaction }}
+      value={{
+        transactions: state.transactions,
+        deleteTransaction,
+        calculateTotalIncome,
+        calculateTotalExpense,
+      }}
     >
       {children}
     </GlobalContext.Provider>

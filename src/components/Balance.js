@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
 export const Balance = () => {
+  const { calculateTotalIncome, calculateTotalExpense } =
+    useContext(GlobalContext);
+
   return (
     <div className='balance'>
       <h3>your balance</h3>
-      <h3 className='bal-value'>$0.00</h3>
+      <h3 className='bal-value'>
+        ${calculateTotalIncome() - calculateTotalExpense()}
+      </h3>
     </div>
   );
 };
