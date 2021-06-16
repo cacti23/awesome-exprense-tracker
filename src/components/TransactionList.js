@@ -3,15 +3,15 @@ import { Transaction } from './Transaction';
 import { GlobalContext } from '../context/GlobalState';
 
 export const TransactionList = () => {
-  const transactions = useContext(GlobalContext);
-  console.log(transactions);
+  const { transactions } = useContext(GlobalContext);
+
   return (
     <div className='transaction-list'>
       <h4>history</h4>
       <ul>
-        {transactions.map((transaction, index) => {
-          return <Transaction key={index} {...transaction} />;
-        })}
+        {transactions.map((transaction, index) => (
+          <Transaction key={transaction.id} {...transaction} />
+        ))}
       </ul>
     </div>
   );

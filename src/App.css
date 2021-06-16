@@ -148,27 +148,45 @@ h4 {
   font-size: 20px;
 }
 
+.transaction-list ul {
+  position: absolute;
+  width: 340px;
+  top: 40px;
+  left: 10px;
+}
+
 .displayed-list {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 340px;
-  top: 40px;
-  left: 10px;
   height: 40px;
   font-size: 20px;
 }
 
 .displayed-list .bill {
   position: absolute;
+  width: 20px;
+  height: 20px;
   left: 10px;
+}
+
+.displayed-list .bill.income {
   color: var(--clr-income);
+}
+
+.displayed-list .bill.expense {
+  color: var(--clr-expense);
 }
 
 .displayed-list .title {
   position: absolute;
   left: 50px;
+}
+
+.displayed-list .amount {
+  position: absolute;
+  right: 40px;
 }
 
 .displayed-list .delete-btn {
