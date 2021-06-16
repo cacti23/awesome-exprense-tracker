@@ -253,45 +253,17 @@ h4 {
 .form-control button {
   margin-top: 10px;
   width: 340px;
-  height: 40px;
-  font-size: 18px;
   background: var(--clr-add);
   color: #fff;
   border: none;
   position: relative;
   height: 50px;
   font-size: 20px;
-  padding: 0 2em;
   cursor: pointer;
-  transition: 800ms ease all;
   outline: none;
   border-radius: 10px;
 }
 
 .form-control button:hover {
-  background: var(--clr-background);
-  color: var(--clr-add);
-}
-
-.form-control button:before,
-.form-control button:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: var(--clr-add);
-  transition: 400ms ease all;
-}
-.form-control button:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-.form-control button:hover:before,
-.form-control button:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
+  transform: scale(0.98);
 }
