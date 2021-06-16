@@ -12,7 +12,6 @@ export const AddTransaction = () => {
   const onSubmit = e => {
     e.preventDefault();
     let newTransaction;
-    console.log(title + ' ' + isExpense + ' ' + amount);
     if (title && amount) {
       newTransaction = {
         id: uuid(),
