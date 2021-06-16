@@ -180,6 +180,7 @@ h4 {
 }
 
 .displayed-list .title {
+  text-transform: capitalize;
   position: absolute;
   left: 50px;
 }

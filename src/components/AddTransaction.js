@@ -1,21 +1,28 @@
 import React, { useState, useContext } from 'react';
+import uuid from 'react-uuid';
 import { GlobalContext } from '../context/GlobalState';
 
 export const AddTransaction = () => {
   const [title, setTitle] = useState('');
   const [isExpense, setIsExpense] = useState(false);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
 
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = e => {
     e.preventDefault();
-    addTransaction({
-      id: Math.floor(Math.random() * 10000),
-      title,
-      amount: +amount,
-      isExpense,
-    });
+    let newTransaction;
+    if (title && amount) {
+      newTransaction = {
+        id: uuid(),
+        title,
+        amount: +amount,
+        isExpense,
+      };
+      addTransaction(newTransaction);
+    }
+    setTitle('');
+    setAmount('');
   };
 
   return (
@@ -37,7 +44,8 @@ export const AddTransaction = () => {
               <input
                 type='radio'
                 id='income'
-                name='only-one'
+                name='radio-input'
+                checked={isExpense}
                 onChange={() => setIsExpense(true)}
               />
               <span>Income</span>
@@ -46,21 +54,21 @@ export const AddTransaction = () => {
               <input
                 type='radio'
                 id='expense'
-                name='only-one'
-                onChange={() => setIsExpense(false)}
+                name='radio-input'
+                checked={isExpense}
+                onChange={() => setIsExpense(true)}
               />
               <span>Expense</span>
             </label>
           </div>
-
           <label htmlFor='amount'>Amount</label>
           <input
             type='number'
-            placeholder='Add amount...'
             id='amount'
             className='text-input'
             value={amount}
             onChange={e => setAmount(e.target.value)}
+            placeholder='Add amount...'
           />
           <button type='submit'>Add transaction</button>
         </div>
