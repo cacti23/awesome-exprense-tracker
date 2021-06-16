@@ -8,7 +8,7 @@ export const Transaction = ({ id, title, amount, isExpense }) => {
   return (
     <>
       <li className='displayed-list'>
-        <FaMoneyBill className={`bill ${isExpense ? 'income' : 'expense'}`} />
+        <FaMoneyBill className={`bill ${isExpense ? 'expense' : 'income'}`} />
         <p className='title'>{title}</p>
         <p className='amount'>${amount}</p>
         <RiDeleteBack2Fill
