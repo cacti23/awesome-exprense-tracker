@@ -46,7 +46,7 @@ export const AddTransaction = () => {
                 type='radio'
                 id='income'
                 name='radio-input'
-                checked={isExpense}
+                checked={isExpense === false}
                 onChange={e => setIsExpense(false)}
               />
               <span>Income</span>
@@ -56,7 +56,7 @@ export const AddTransaction = () => {
                 type='radio'
                 id='expense'
                 name='radio-input'
-                checked={isExpense}
+                checked={isExpense === true}
                 onChange={e => setIsExpense(true)}
               />
               <span>Expense</span>
