@@ -61,10 +61,10 @@ exports.deleteTransaction = async (req, res, next) => {
         error: 'No Transaction Found',
       });
     }
-    await transaction.remove();
+    await transaction.deleteOne();
     return res.status(200).json({
       success: true,
-      data: [],
+      data: {},
     });
   } catch (error) {
     return res.status(500).json({
