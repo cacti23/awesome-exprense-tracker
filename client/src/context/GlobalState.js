@@ -22,12 +22,7 @@ export const GlobalProvider = ({ children }) => {
         type: 'GET_TRANSACTIONS',
         payload: res.data.data,
       });
-    } catch (error) {
-      dispatch({
-        type: 'TRANSACTION_ERROR',
-        payload: error.response.data.error,
-      });
-    }
+    } catch (error) {}
   }
 
   function calculateTotalIncome() {
@@ -43,11 +38,19 @@ export const GlobalProvider = ({ children }) => {
       .toFixed(2);
   }
 
-  function deleteTransaction(id) {
-    dispatch({
-      type: 'DELETE_TRANSACTION',
-      payload: id,
-    });
+  async function deleteTransaction(id) {
+    try {
+      await axios.delete(`/api/v1/transactions/${id}`);
+      dispatch({
+        type: 'DELETE_TRANSACTION',
+        payload: id,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'TRANSACTION_ERROR',
+        payload: error.response.data.error,
+      });
+    }
   }
 
   function addTransaction(transaction) {
