@@ -1,11 +1,11 @@
 const path = require('path');
 const express = require('express');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const colors = require('colors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 
-dotenv.config({ path: './config/config.env' });
+// dotenv.config({ path: './config/config.env' });
 
 connectDB();
 

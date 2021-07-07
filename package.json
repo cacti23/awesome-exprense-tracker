@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "app to manage your financial activity",
   "main": "server.js",
+  "engine": {
+    "node": "14.17.0",
+    "npm": "7.19.0"
+  },
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
