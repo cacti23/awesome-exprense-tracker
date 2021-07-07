@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import uuid from 'react-uuid';
 import { GlobalContext } from '../context/GlobalState';
 
 export const AddTransaction = () => {
@@ -14,7 +13,6 @@ export const AddTransaction = () => {
     let newTransaction;
     if (title && amount) {
       newTransaction = {
-        id: uuid(),
         title,
         amount: +amount,
         isExpense,
