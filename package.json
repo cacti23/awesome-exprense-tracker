@@ -1,0 +1,31 @@
+{
+  "name": "expense-tracker-app",
+  "version": "1.0.0",
+  "description": "app to manage your financial activity",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cacti23/expense-tracker-app.git"
+  },
+  "author": "aditya patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cacti23/expense-tracker-app/issues"
+  },
+  "homepage": "https://github.com/cacti23/expense-tracker-app#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.9"
+  }
+}
