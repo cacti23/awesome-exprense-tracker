@@ -1,6 +1,6 @@
 ### Expense Tracker App (MERN)
 
-### [Live Site](https://objective-minsky-7d1cd6.netlify.app/)
+### [Live Site](https://warm-chamber-29456.herokuapp.com/)
 
 ## Usage
 
