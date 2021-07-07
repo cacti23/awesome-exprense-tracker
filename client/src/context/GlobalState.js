@@ -25,19 +25,6 @@ export const GlobalProvider = ({ children }) => {
     } catch (error) {}
   }
 
-  function calculateTotalIncome() {
-    return state.transactions
-      .filter(transaction => !transaction.isExpense)
-      .reduce((acc, transaction) => (acc += transaction.amount), 0)
-      .toFixed(2);
-  }
-  function calculateTotalExpense() {
-    return state.transactions
-      .filter(transaction => transaction.isExpense)
-      .reduce((acc, transaction) => (acc += transaction.amount), 0)
-      .toFixed(2);
-  }
-
   async function deleteTransaction(id) {
     try {
       await axios.delete(`/api/v1/transactions/${id}`);
@@ -53,11 +40,38 @@ export const GlobalProvider = ({ children }) => {
     }
   }
 
-  function addTransaction(transaction) {
-    dispatch({
-      type: 'ADD_TRANSACTION',
-      payload: transaction,
-    });
+  async function addTransaction(transaction) {
+    const config = {
+      headers: {
+        'Content-type': 'application/json',
+      },
+    };
+
+    try {
+      const res = await axios.post('/api/v1/transactions', transaction, config);
+      dispatch({
+        type: 'ADD_TRANSACTION',
+        payload: res.data.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: 'TRANSACTION_ERROR',
+        payload: error.response.data.error,
+      });
+    }
+  }
+
+  function calculateTotalIncome() {
+    return state.transactions
+      .filter(transaction => !transaction.isExpense)
+      .reduce((acc, transaction) => (acc += transaction.amount), 0)
+      .toFixed(2);
+  }
+  function calculateTotalExpense() {
+    return state.transactions
+      .filter(transaction => transaction.isExpense)
+      .reduce((acc, transaction) => (acc += transaction.amount), 0)
+      .toFixed(2);
   }
 
   return (
