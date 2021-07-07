@@ -3,7 +3,7 @@ import { GlobalContext } from '../context/GlobalState';
 import { FaMoneyBill } from 'react-icons/fa';
 import { RiDeleteBack2Fill } from 'react-icons/ri';
 
-export const Transaction = ({ id, title, amount, isExpense }) => {
+export const Transaction = ({ _id, title, amount, isExpense }) => {
   const { deleteTransaction } = useContext(GlobalContext);
   return (
     <>
@@ -13,7 +13,7 @@ export const Transaction = ({ id, title, amount, isExpense }) => {
         <p className='amount'>${amount}</p>
         <RiDeleteBack2Fill
           className='delete-btn'
-          onClick={() => deleteTransaction(id)}
+          onClick={() => deleteTransaction(_id)}
         />
       </li>
     </>
